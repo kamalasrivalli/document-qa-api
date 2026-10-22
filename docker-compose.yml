@@ -1,0 +1,22 @@
+
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: document_qa
+      POSTGRES_USER: appuser
+      POSTGRES_PASSWORD: devpassword
+    ports:
+      - "5432:5432"
+
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DB_HOST: db
+      DB_NAME: document_qa
+      DB_USER: appuser
+      DB_PASSWORD: devpassword
+    depends_on:
+      - db
