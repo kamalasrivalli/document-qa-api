@@ -7,7 +7,7 @@ app = FastAPI()
 
 @app.get("/")
 def home():
-    return {"message": "Document Q&A API is running"}
+    return {"message": "Document Q&A API is running - CI/CD verified"}
 
 
 app.include_router(question_router)
