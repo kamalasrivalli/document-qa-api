@@ -21,3 +21,6 @@ services:
       DB_PASSWORD: devpassword
     depends_on:
       - db
+
+volumes:
+  postgres_data:
