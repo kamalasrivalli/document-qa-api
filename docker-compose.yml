@@ -6,6 +6,8 @@ services:
       POSTGRES_DB: document_qa
       POSTGRES_USER: appuser
       POSTGRES_PASSWORD: devpassword
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     
 
   api:
